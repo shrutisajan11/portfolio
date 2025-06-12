@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional custom styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: white;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+/* Blob animation - responsive */
+@keyframes blob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(30px, -10px) scale(1.1);
+  }
+  66% {
+    border-radius: 60% 30% 40% 70% / 70% 40% 60% 30%;
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Mobile-first blob animation */
+@keyframes blobMobile {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) scale(0.8);
+  }
+  33% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(15px, -5px) scale(0.9);
+  }
+  66% {
+    border-radius: 60% 30% 40% 70% / 70% 40% 60% 30%;
+    transform: translate(-10px, 10px) scale(0.7);
+  }
+}
+
+.animate-blob {
+  animation: blobMobile 6s infinite;
+  z-index: 0;
+}
+
+/* Tablet and desktop blob animation */
+@media (min-width: 768px) {
+  .animate-blob {
+    animation: blob 8s infinite;
+  }
+}
+
+.absolute {
+  z-index: 0;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+/* Responsive floating dots */
+.floating-dot {
+  position: absolute;
+  background-color: rgba(171, 71, 229, 0.3);
+  border-radius: 100%;
+  animation: floatUpDownMobile 3s ease-in-out infinite;
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(211, 79, 202, 0.4);
+  /* Mobile-first sizing */
+  width: 8px;
+  height: 8px;
+}
+
+/* Mobile floating animation - gentler movement */
+@keyframes floatUpDownMobile {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Tablet floating animation */
+@media (min-width: 768px) {
+  .floating-dot {
+    width: 12px;
+    height: 12px;
+    animation: floatUpDown 4s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(211, 79, 202, 0.5);
+  }
+  
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+/* Desktop floating animation */
+@media (min-width: 1024px) {
+  .floating-dot {
+    width: 16px;
+    height: 16px;
+  }
+  
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 767px) {
+  /* Reduce animation intensity on mobile for better performance */
+  .animate-blob {
+    animation-duration: 8s;
+  }
+  
+  /* Ensure content doesn't get cut off */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .floating-dot {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance optimization for mobile */
+@media (max-width: 767px) {
+  .animate-blob,
+  .floating-dot {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
