@@ -395,7 +395,7 @@ export default function Portfolio() {
   <div>
   <h3 className="text-xl font-semibold mb-2">Heartify - Heart Disease Risk Prediction App</h3>
   <p className="mb-4">
-    IoT-based heart disease risk prediction system using FL and sensor data.
+    IoT-based heart disease risk prediction system using Federated Learning and live heart rate sensor data. An alert system is also implemented using EmailJS sending alerts to patients,doctors and emergency contacts incase of high risks.
   </p>
 
   <p className="font-medium mb-2">Technologies Used:</p>
@@ -454,25 +454,26 @@ It also supports translated summaries, enhancing accessibility and learning for 
   transition={{ duration: 0.7 }}
 >
   <div>
-    <h3 className="text-xl font-semibold mb-2">Bias Explorer App</h3>
+    <h3 className="text-xl font-semibold mb-2">Advanced Bias Explorer App</h3>
     <p className="mb-4">
-      An interactive Streamlit app that visualizes and analyzes bias in machine learning models using fairness metrics across sensitive attributes like gender and race.
+      A comprehensive bias detection and mitigation platform built using Streamlit that automatically identifies sensitive attributes in your data, applies industry-standard fairness techniques across pre-processing, in-processing, and post-processing stages, and provides actionable insights with performance-fairness trade-off analysis.
     </p>
     <p className="font-medium mb-2">Technologies Used:</p>
  <div className="grid grid-cols-3 gap-4 justify-items-center mb-4 max-w-md mx-auto">
-    <img src="/images/streamlit.png" alt="HTML/CSS" className="w-20 h-auto rounded" />
-    <img src="/images/python.png" alt="Firebase" className="w-20 h-auto rounded" />
-    <img src="/images/scikit.png" alt="Django" className="w-20 h-auto rounded" />
-    <img src="/images/pandas.png" alt="ESP32" className="w-20 h-auto rounded" />
-    <img src="/images/matplotlib.png" alt="MAX30100" className="w-20 h-auto rounded" />
-     <img src="/images/seaborn.png" alt="MAX30100" className="w-20 h-auto rounded" />
+    <img src="/images/streamlit.png" alt="streamlit" className="w-20 h-auto rounded" />
+    <img src="/images/python.png" alt="python" className="w-20 h-auto rounded" />
+    <img src="/images/scikit.png" alt="scikit" className="w-20 h-auto rounded" />
+    <img src="/images/pandas.png" alt="pandas" className="w-20 h-auto rounded" />
+    <img src="/images/numpy.png" alt="numpy" className="w-20 h-auto rounded" />
+     <img src="/images/plotly.png" alt="plotly" className="w-20 h-auto rounded" />
+     <img src="/images/scipy.png" alt="scipy" className="w-20 h-auto rounded" />
   </div>
 
      </div>
    <ol className="list-disc list-inside text-base mb-6">
       <li>Streamlit</li>
       <li>Python</li>
-      <li>ML-scikit-learn,pandas,matplotlib,seaborn</li>
+      <li>ML-numpy,scikit-learn,pandas,plotly</li>
     </ol>
  
 
