@@ -172,7 +172,7 @@ export default function Portfolio() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Software Engineer | ML Enthusiast
+          Software Engineer | Fresher
         </motion.p>
         <motion.div
           className="mt-6"
@@ -180,13 +180,6 @@ export default function Portfolio() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          <a
-            href="/resume.pdf"
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
-          >
-            <FaDownload /> Download Resume
-          </a>
         </motion.div>
       </header>
 
